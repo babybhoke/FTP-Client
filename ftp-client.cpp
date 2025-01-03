@@ -86,4 +86,15 @@ public:
     }
 };
 
-int main()
+int main() {
+     FTPClient client("127.0.0.1", 21);
+
+    if (client.connectAndLogin("username", "password")) {
+        std::cout << "Login successful!" << std::endl;
+        client.listFiles();
+    } else {
+        std::cerr << "Failed to connect or login!" << std::endl;
+    }
+
+    return 0;
+}
