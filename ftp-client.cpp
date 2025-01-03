@@ -56,5 +56,15 @@ public:
 
         // Wait for server response
         std::cout << receiveResponse();
+
+        // Send username
+        sendCommand("USER " + username);
+        std::cout << receiveResponse();
+
+        // Send password
+        sendCommand("PASS " + password);
+        std::cout << receiveResponse();
+
+        return true;
     }
 };
