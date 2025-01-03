@@ -5,6 +5,7 @@
 #include <arpa/inet.h>
 #include <unistd.h>
 
+// An FTPClient class
 class FTPClient {
 private:
     int controlSocket;
