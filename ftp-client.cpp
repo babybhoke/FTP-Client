@@ -32,4 +32,14 @@ private:
         }
         return true;
     }
+
+    std::string receiveResponse() {
+        char buffer[1024];
+        std::memset(buffer, 0, sizeof(buffer));
+        int bytesReceived = recv(controlSocket, buffer, sizeof(buffer), 0);
+        if (bytesReceived > 0) {
+            return std::string(buffer, bytesReceived);
+        }
+        return {};
+    }
 };
