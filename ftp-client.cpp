@@ -52,6 +52,9 @@ public:
     FTPClient(const std::string& server, int port) : serverAddress(server), serverPort(port) {}
 
     bool connectAndLogin(const std::string& username, const std::string& password) {
-        
+        if (!connectToServer()) return false;
+
+        // Wait for server response
+        std::cout << receiveResponse();
     }
 };
