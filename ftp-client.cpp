@@ -78,4 +78,10 @@ public:
         // Example: Connect to the derived IP:PORT using a data socket
         // Send LIST command and print received data.
     }
+
+    ~FTPClient() {
+        if (controlSocket >= 0) {
+            close(controlSocket);
+        }
+    }
 };
