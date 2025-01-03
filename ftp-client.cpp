@@ -10,4 +10,6 @@ private:
     int controlSocket;
     std::string serverAddress;
     int serverPort;
-}
+
+    bool connectToServer() {}
+};
