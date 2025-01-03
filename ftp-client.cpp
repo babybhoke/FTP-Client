@@ -67,4 +67,6 @@ public:
 
         return true;
     }
+
+    void listFiles()
 };
