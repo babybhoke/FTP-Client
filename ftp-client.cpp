@@ -88,7 +88,7 @@ public:
 
 //app's main function
 int main() {
-     FTPClient client("127.0.0.1", 21);
+    FTPClient client("127.0.0.1", 21);
 
     if (client.connectAndLogin("username", "password")) {
         std::cout << "Login successful!" << std::endl;
