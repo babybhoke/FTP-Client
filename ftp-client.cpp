@@ -42,4 +42,9 @@ private:
         }
         return {};
     }
+
+    void sendCommand(const std::string& command) {
+        send(controlSocket, command.c_str(), command.size(), 0);
+        send(controlSocket, "\r\n", 2, 0); // End of command
+    }
 };
