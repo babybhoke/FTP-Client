@@ -5,4 +5,9 @@
 #include <arpa/inet.h>
 #include <unistd.h>
 
-class FTPClient {}
+class FTPClient {
+private:
+    int controlSocket;
+    std::string serverAddress;
+    int serverPort;
+}
