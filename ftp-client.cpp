@@ -68,5 +68,14 @@ public:
         return true;
     }
 
-    void listFiles()
+    void listFiles() {
+        sendCommand("PASV");
+        std::string response = receiveResponse();
+        std::cout << "PASV Response: " << response;
+
+        // Extract IP and port from PASV response (e.g., 227 Entering Passive Mode (192,168,1,2,12,34))
+        // Use a regex or parsing logic to connect to the data port for LIST
+        // Example: Connect to the derived IP:PORT using a data socket
+        // Send LIST command and print received data.
+    }
 };
