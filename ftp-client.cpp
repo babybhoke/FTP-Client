@@ -20,5 +20,16 @@ private:
             std::cerr << "Error creating socket!" << std::endl;
             return false;
         }
+
+        serverAddr.sin_family = AF_INET;
+        serverAddr.sin_port = htons(serverPort);
+        inet_pton(AF_INET, serverAddress.c_str(), &serverAddr.sin_addr);
+
+        // Connect to server
+        if (connect(controlSocket, (struct sockaddr*)&serverAddr, sizeof(serverAddr)) < 0) {
+            std::cerr << "Connection to server failed!" << std::endl;
+            return false;
+        }
+        return true;
     }
 };
